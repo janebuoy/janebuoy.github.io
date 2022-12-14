@@ -1,2 +1,0 @@
-# [Micrograph.io]{.title}
-
