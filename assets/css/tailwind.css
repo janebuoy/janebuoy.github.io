@@ -151,7 +151,11 @@
 	}
 
 	.date {
-		@apply absolute border-t border-l border-solid rounded-tl border-indigo-600 px-2 py-2 mt-1 right-0 bottom-0 text-indigo-700/80 font-serif text-sm
+		@apply absolute border-t border-l border-solid rounded-tl border-indigo-600 px-2 py-2 mt-1 right-0 bottom-0 text-indigo-700/80 font-serif text-sm bg-orange-50
+	}
+
+	.profile {
+		@apply rounded-full w-1/5
 	}
 }
 
