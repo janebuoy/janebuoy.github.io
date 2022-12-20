@@ -14,4 +14,3 @@ export default defineNuxtConfig({
     documentDriven: true
   }
 })
-

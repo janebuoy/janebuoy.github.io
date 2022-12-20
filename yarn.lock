@@ -289,6 +289,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.18.tgz#128b76ecb9be48b60cf5cfc1c63a4f00691a3239"
   integrity sha512-L4jVKS82XVhw2nvzLg/19ClLWg0y27ulRwuP7lcyL6AbUWB5aPglXY3M21mauDQMDfRLs8cQmeT03r/+X3cZYQ==
 
+"@heroicons/vue@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-2.0.13.tgz#974c52abf8dab70e7d2a3a93d7fdadff4a0e9ec2"
+  integrity sha512-vVCVF02+rNKXEmanVNnmktJlxCbOn0qVFP1gfZPn4bcBIwPX3h9AVHGCkwly+IWDEME8w5oooG0KRd2hhSe/HQ==
+
 "@ioredis/commands@^1.1.1":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ioredis/commands/-/commands-1.2.0.tgz#6d61b3097470af1fdbbe622795b8921d42018e11"
@@ -860,7 +865,12 @@
     "@vue/compiler-dom" "3.2.45"
     "@vue/shared" "3.2.45"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/composition-api@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@vue/composition-api/-/composition-api-1.7.1.tgz#aa6831be5a12817d93e89e247460c310dd7a3a32"
+  integrity sha512-xDWoEtxGXhH9Ku3ROYX/rzhcpt4v31hpPU5zF3UeVC/qxA3dChmqU8zvTUYoKh3j7rzpNsoFOwqsWG7XPMlaFA==
+
+"@vue/devtools-api@^6.0.0-beta.19", "@vue/devtools-api@^6.4.5":
   version "6.4.5"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.4.5.tgz#d54e844c1adbb1e677c81c665ecef1a2b4bb8380"
   integrity sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==
@@ -5902,6 +5912,13 @@ vue-bundle-renderer@^1.0.0:
   integrity sha512-43vCqTgaMXfHhtR8/VcxxWD1DgtzyvNc4wNyG5NKCIH19O1z5G9ZCRXTGEA2wifVec5PU82CkRLD2sTK9NkTdA==
   dependencies:
     ufo "^1.0.0"
+
+vue-composable@^1.0.0-beta.24:
+  version "1.0.0-beta.24"
+  resolved "https://registry.yarnpkg.com/vue-composable/-/vue-composable-1.0.0-beta.24.tgz#04032163fb90adfb4c1f0f5d962f9bca00398341"
+  integrity sha512-rVxqIk+CCBDNlu7MK59FB6hIHbjpaNszSZ3o1fReXiDKpdw2AAnSWx5vqUpJgC4yGlUzBMJ2eUQIjij5/wr8Kg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.19"
 
 vue-devtools-stub@^0.1.0:
   version "0.1.0"
