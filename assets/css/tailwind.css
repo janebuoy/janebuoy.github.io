@@ -171,12 +171,6 @@
 		@apply mb-0
 	}
 
-	.author {
-		@apply text-indigo-700;
-		@apply -mt-6 block text-sm;
-		margin-bottom: 1.38rem;
-	}
-
 	.info {
 		@apply inline-block
 	}
