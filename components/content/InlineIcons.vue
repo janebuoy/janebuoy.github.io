@@ -12,6 +12,6 @@ const icons = reactive({
 <template>
   <component
     :is="icons[props.type]"
-    class="h-4 w-4 text-indigo-700 inline"
+    class="h-4 w-4 text-indigo-700 dark:text-indigo-300 inline"
   ></component>
 </template>

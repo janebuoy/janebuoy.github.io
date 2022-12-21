@@ -1,24 +1,6 @@
 @tailwind base;
 
 @layer base {
-	@font-face {
-		font-family: Prociono;
-		font-weight: 400;
-		src: url(assets/fonts/Prociono-Regular-webfont.woff) format("woff");
-	}
-
-	@font-face {
-		font-family: Goudy Bookletter;
-		font-weight: 400;
-		src: url(assets/fonts/goudy_bookletter_1911-webfont.woff) format("woff");
-	}
-
-	@font-face {
-		font-family: GoudyStM;
-		font-weight: 400;
-		src: url(assets/fonts/GoudyStM-webfont.woff) format("woff");
-	}
-
 	/* inter-regular - latin */
 	@font-face {
 		font-family: 'Inter';
@@ -36,26 +18,6 @@
 			url('../fonts/inter-v12-latin-regular.ttf') format('truetype'),
 			/* Safari, Android, iOS */
 			url('../fonts/inter-v12-latin-regular.svg#Inter') format('svg');
-		/* Legacy iOS */
-	}
-
-	/* port-lligat-slab-regular - latin */
-	@font-face {
-		font-family: 'Port Lligat Slab';
-		font-style: normal;
-		font-weight: 400;
-		src: url('../fonts/port-lligat-slab-v21-latin-regular.eot');
-		/* IE9 Compat Modes */
-		src: local(''),
-			url('../fonts/port-lligat-slab-v21-latin-regular.eot?#iefix') format('embedded-opentype'),
-			/* IE6-IE8 */
-			url('../fonts/port-lligat-slab-v21-latin-regular.woff2') format('woff2'),
-			/* Super Modern Browsers */
-			url('../fonts/port-lligat-slab-v21-latin-regular.woff') format('woff'),
-			/* Modern Browsers */
-			url('../fonts/port-lligat-slab-v21-latin-regular.ttf') format('truetype'),
-			/* Safari, Android, iOS */
-			url('../fonts/port-lligat-slab-v21-latin-regular.svg#PortLligatSlab') format('svg');
 		/* Legacy iOS */
 	}
 
@@ -81,10 +43,10 @@
 
 	body {
 		@apply p-4 sm:p-8 md:p-10;
-		@apply bg-stone-100;
+		@apply bg-stone-100 dark:bg-zinc-900;
 		background-image: url(assets/noise.png);
 		line-height: 1.75;
-		@apply text-slate-900
+		@apply text-slate-900 dark:text-slate-300;
 	}
 
 	.prose {
@@ -115,11 +77,12 @@
 	}
 
 	a {
-		@apply text-indigo-700 hover:underline;
+		@apply text-indigo-700 dark:text-indigo-500 hover:underline;
 		@apply underline-offset-8;
 		/* Gradient Hover */
 		/* @apply bg-gradient-to-b hover:from-orange-200 hover:via-orange-100 hover:to-orange-50; */
-		@apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100
+		@apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
+		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60
 	}
 
 	ul {
@@ -145,7 +108,7 @@
 
 	nav > ul > li {
 		@apply block mx-0 p-0 overflow-clip;
-		@apply bg-indigo-100/20;
+		@apply bg-indigo-100/20 dark:bg-indigo-900/30;
 		/* borders */
 		@apply border-indigo-700 border-b border-x first:border-t last:border-b first:rounded-t last:rounded-b;
 		/* @media (min-width: 768px) */
@@ -160,12 +123,15 @@
 		@apply text-center;
 		@apply block p-2 hover:no-underline md:inline;
 		@apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
+		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60;
 		@apply md:py-2 md:px-4
 	}
 
 	.btn {
-		@apply bg-indigo-100/20;
+		@apply bg-indigo-100/20 dark:bg-indigo-900/30;
 		@apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
+		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60;
+
 	}
 
 	.title {
@@ -182,7 +148,7 @@
 
 	.content-card {
 		@apply border border-solid border-indigo-600 rounded mb-6 md:mb-0 relative z-20;
-		@apply bg-indigo-200/20;
+		@apply bg-indigo-200/20 dark:bg-indigo-900/30;
 	}
 
 	.content-card h2 {
@@ -194,8 +160,9 @@
 	}
 
 	.content-meta {
-		@apply w-full flex justify-end -z-10 relative rounded-b border-t border-solid border-indigo-600 px-2 py-2 mt-1 right-0 bottom-0 text-indigo-700/80 font-serif text-sm;
+		@apply w-full flex justify-end -z-10 relative rounded-b border-t border-solid border-indigo-600 px-2 py-2 mt-1 right-0 bottom-0 text-indigo-700/80 dark:text-indigo-200 font-serif text-sm;
 		@apply bg-gradient-to-bl from-orange-50 via-amber-50 to-orange-50;
+		@apply dark:bg-none dark:bg-indigo-900/10;
 	}
 
 	.profile {

@@ -1,3 +1,8 @@
 {
-  "html.autoCreateQuotes": false
+  "html.autoCreateQuotes": false,
+  "files.exclude": {
+    "CNAME": true,
+    "node_modules": true,
+    ".nuxt": true
+  }
 }
