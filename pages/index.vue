@@ -35,13 +35,12 @@ function toggle() {
 </script>
 
 <template>
+  <nav>
+    <h1>{{ config.title }}</h1>
+    <MenuButton @click.prevent="toggle" />
+    <Nav v-show="active" :posts="posts" />
+  </nav>
   <main>
-    <div class="navbar">
-      <h1>{{ config.title }}</h1>
-      <MenuButton @click.prevent="toggle" />
-      <Nav v-show="active" :posts="posts" />
-    </div>
-
     <div class="content-grid">
       <ContentCard v-for="post in posts" :key="post._path" :post="post">
         <ContentRenderer :value="post">
