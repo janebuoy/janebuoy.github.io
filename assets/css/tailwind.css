@@ -1,44 +1,88 @@
 @tailwind base;
 
 @layer base {
-	/* inter-regular - latin */
+	/* signika-300 - latin */
 	@font-face {
-		font-family: 'Inter';
+		font-family: 'Signika';
 		font-style: normal;
-		font-weight: 400;
-		src: url('../fonts/inter-v12-latin-regular.eot');
+		font-weight: 300;
+		src: url('../fonts/signika-v20-latin-300.eot');
 		/* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/inter-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/signika-v20-latin-300.eot?#iefix') format('embedded-opentype'),
 			/* IE6-IE8 */
-			url('../fonts/inter-v12-latin-regular.woff2') format('woff2'),
+			url('../fonts/signika-v20-latin-300.woff2') format('woff2'),
 			/* Super Modern Browsers */
-			url('../fonts/inter-v12-latin-regular.woff') format('woff'),
+			url('../fonts/signika-v20-latin-300.woff') format('woff'),
 			/* Modern Browsers */
-			url('../fonts/inter-v12-latin-regular.ttf') format('truetype'),
+			url('../fonts/signika-v20-latin-300.ttf') format('truetype'),
 			/* Safari, Android, iOS */
-			url('../fonts/inter-v12-latin-regular.svg#Inter') format('svg');
+			url('../fonts/signika-v20-latin-300.svg#Signika') format('svg');
 		/* Legacy iOS */
 	}
 
-	/* geo-regular - latin */
+	/* signika-regular - latin */
 	@font-face {
-		font-family: 'Geo';
+		font-family: 'Signika';
 		font-style: normal;
 		font-weight: 400;
-		src: url('../fonts/geo-v19-latin-regular+µ.eot');
+		src: url('../fonts/signika-v20-latin-regular.eot');
 		/* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/geo-v19-latin-regular+µ.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/signika-v20-latin-regular.eot?#iefix') format('embedded-opentype'),
 			/* IE6-IE8 */
-			url('../fonts/geo-v19-latin-regular+µ.woff2') format('woff2'),
+			url('../fonts/signika-v20-latin-regular.woff2') format('woff2'),
 			/* Super Modern Browsers */
-			url('../fonts/geo-v19-latin-regular+µ.woff') format('woff'),
+			url('../fonts/signika-v20-latin-regular.woff') format('woff'),
 			/* Modern Browsers */
-			url('../fonts/geo-v19-latin-regular+µ.ttf') format('truetype'),
+			url('../fonts/signika-v20-latin-regular.ttf') format('truetype'),
 			/* Safari, Android, iOS */
-			url('../fonts/geo-v19-latin-regular.svg#Geo') format('svg');
+			url('../fonts/signika-v20-latin-regular.svg#Signika') format('svg');
 		/* Legacy iOS */
+	}
+
+	/* signika-500 - latin */
+	@font-face {
+		font-family: 'Signika';
+		font-style: normal;
+		font-weight: 500;
+		src: url('../fonts/signika-v20-latin-500.eot');
+		/* IE9 Compat Modes */
+		src: local(''),
+			url('../fonts/signika-v20-latin-500.eot?#iefix') format('embedded-opentype'),
+			/* IE6-IE8 */
+			url('../fonts/signika-v20-latin-500.woff2') format('woff2'),
+			/* Super Modern Browsers */
+			url('../fonts/signika-v20-latin-500.woff') format('woff'),
+			/* Modern Browsers */
+			url('../fonts/signika-v20-latin-500.ttf') format('truetype'),
+			/* Safari, Android, iOS */
+			url('../fonts/signika-v20-latin-500.svg#Signika') format('svg');
+		/* Legacy iOS */
+	}
+
+	/* signika-600 - latin */
+	@font-face {
+		font-family: 'Signika';
+		font-style: normal;
+		font-weight: 600;
+		src: url('../fonts/signika-v20-latin-600.eot');
+		/* IE9 Compat Modes */
+		src: local(''),
+			url('../fonts/signika-v20-latin-600.eot?#iefix') format('embedded-opentype'),
+			/* IE6-IE8 */
+			url('../fonts/signika-v20-latin-600.woff2') format('woff2'),
+			/* Super Modern Browsers */
+			url('../fonts/signika-v20-latin-600.woff') format('woff'),
+			/* Modern Browsers */
+			url('../fonts/signika-v20-latin-600.ttf') format('truetype'),
+			/* Safari, Android, iOS */
+			url('../fonts/signika-v20-latin-600.svg#Signika') format('svg');
+		/* Legacy iOS */
+	}
+
+	html {
+		@apply scroll-smooth -scroll-mt-6;
 	}
 
 	body {
@@ -46,6 +90,8 @@
 		@apply bg-stone-100 dark:bg-zinc-900;
 		background-image: url(assets/noise.png);
 		line-height: 1.75;
+		letter-spacing: -0.025;
+		font-weight: 400;
 		@apply text-slate-900 dark:text-slate-300;
 	}
 
@@ -62,6 +108,7 @@
 		@apply font-serif;
 		line-height: 1.3;
 		margin: 3rem 0 1.38rem;
+		@apply scroll-mt-6 sm:scroll-mt-[1.75rem];
 	}
 
 	h1,
@@ -70,76 +117,67 @@
 	h4,
 	h5,
 	h6 a {
-		@apply decoration-2;
+		@apply decoration-2 ;
 	}
 
 	h1 {
-		@apply mt-0 text-5xl;
+		@apply mt-0 text-4xl;
 	}
 
 	h2 {
-		@apply text-4xl;
+		@apply text-3xl;
 	}
 
 	h3 {
-		@apply text-3xl;
+		@apply text-2xl;
 	}
 
 	a {
 		@apply text-indigo-700 dark:text-indigo-500 hover:underline underline-offset-4;
-		/* Gradient Hover */
-		/* @apply bg-gradient-to-b hover:from-orange-200 hover:via-orange-100 hover:to-orange-50; */
 		@apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
 		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60
 	}
 
-	ul {
-		@apply pl-3
+	p, ul, ol {
+		@apply mb-2
 	}
 
-	li {
-		list-style-type: '+';
-		@apply pl-5
+	ul > li {
+		@apply table-row;
+	}
+
+	ul > li:before {
+		content: "+";
+		@apply table-cell pr-3 text-slate-900/80 dark:text-slate-300/80 text-base font-serif leading-7 relative -top-[0.14rem];
+	}
+
+	ol {
+		@apply table;
+		counter-reset: item;
+	}
+
+	ol > li {
+		@apply pl-3 table-row;
+	}
+	
+	ol > li:before {
+		content: counters(item, ".") " ";
+		counter-increment: item;
+		@apply table-cell pr-3 text-slate-900/80 dark:text-slate-300/80 text-base font-serif leading-7;
 	}
 
 	nav {
-		@apply w-full flex flex-row flex-wrap justify-between md:items-center
+		@apply w-full
 	}
+}
 
-	#menu {
-		@apply w-full md:w-fit flex-auto md:flex-none md:inline-block mb-6
-	}
+@tailwind components;
 
-	#menu > ul {
-		@apply p-0 md:mb-3;
-	}
-
-	#menu > ul > li {
-		@apply block mx-0 p-0 overflow-clip;
-		@apply bg-indigo-100/20 dark:bg-indigo-900/30;
-		/* borders */
-		@apply border-indigo-700 border-b border-x first:border-t last:border-b first:rounded-t last:rounded-b;
-		/* @media (min-width: 768px) */
-		@apply md:inline-block md:py-1 first:md:ml-0 last:md:mr-0;
-		/* resets */
-		@apply md:border-0 first:md:rounded-none last:md:rounded-none;
-		/* borders */
-		@apply md:border-r md:border-t md:border-b first:md:rounded-l first:md:border-l last:md:border-b last:md:rounded-r;
-	}
-
-	#menu > ul > li > a {
-		@apply text-center;
-		@apply block p-2 hover:no-underline md:inline;
-		@apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
-		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60;
-		@apply md:py-2 md:px-4
-	}
-
+@layer components {
 	.btn {
 		@apply bg-indigo-100/20 dark:bg-indigo-900/30;
 		@apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
 		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60;
-
 	}
 
 	.title {
@@ -151,33 +189,35 @@
 	}
 
 	.content-grid {
-		@apply md:grid gap-6 grid-cols-2;
+		@apply md:grid gap-6 grid-cols-6;
 	}
 
 	.content-card {
-		@apply border border-solid border-indigo-600 rounded mb-6 md:mb-0 relative z-20;
+		@apply border border-solid border-indigo-600 rounded mb-6 md:mb-0 relative z-20 flex flex-col justify-between;
 		@apply bg-indigo-200/20 dark:bg-indigo-900/30;
 	}
 
-	.content-card h2 {
+	.content-text > h2:first-of-type, .content-text > #toc > h2:first-of-type {
 		@apply mt-0
 	}
 
 	.content-text {
-		@apply p-3 pb-6
+		@apply p-4 pb-6 md:p-6 md:pb-8 lg:p-10 lg:pb-12
 	}
 
 	.content-meta {
-		@apply w-full flex justify-end -z-10 relative rounded-b border-t border-solid border-indigo-600 px-2 py-2 mt-1 right-0 bottom-0 text-indigo-700/80 dark:text-indigo-200 font-serif text-sm;
+		@apply w-full flex justify-end -z-10 relative rounded-b border-t border-solid border-indigo-600 mt-1 right-0 bottom-0 text-indigo-700/80 dark:text-indigo-200 font-serif text-sm;
 		@apply bg-gradient-to-bl from-orange-50 via-amber-50 to-orange-50;
 		@apply dark:bg-none dark:bg-indigo-900/10;
+	}
+
+	.content-meta-field {
+		@apply border-indigo-700 p-2 border-l text-slate-900/80 dark:text-slate-300/80
 	}
 
 	.profile {
 		@apply rounded-full w-1/5
 	}
 }
-
-@tailwind components;
 
 @tailwind utilities;

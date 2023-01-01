@@ -1,3 +1,10 @@
+<script setup>
+const { data: posts } = await useAsyncData(() => {
+  return queryContent('/').find();
+});
+</script>
+
 <template>
-  <NuxtPage class="prose text-left" />
+  <TopNav :posts="posts" />
+  <NuxtPage class="prose text-left scroll-smooth" :posts="posts" />
 </template>

@@ -5,33 +5,43 @@ const props = defineProps(['post']);
 
 <template>
   <div
+    v-if="props.post"
     class="content-card"
     :class="[
-      route.hash.slice(1) === props.post._path.slice(1) ? 'selected' : null,
+      route.hash.slice(1) === props.post._path.slice(1) ||
+      route.href.slice(1) === props.post._path.slice(1)
+        ? 'selected'
+        : null,
     ]"
   >
+    <slot />
+  </div>
+  <div v-else class="content-card">
     <slot />
   </div>
 </template>
 
 <style lang="postcss" scoped>
 .selected {
-  @apply bg-gradient-to-tl from-orange-100/50 via-rose-100/50 to-pink-200/50 border-pink-700;
-  @apply dark:from-orange-900/10 dark:via-rose-900/20 dark:to-pink-800/20;
+  @apply bg-gradient-to-tl from-orange-100/30 via-rose-100/40 to-pink-200/30 border-pink-700;
+  @apply dark:from-orange-900/5 dark:via-rose-900/10 dark:to-pink-800/10;
 
-  :slotted(.content-text) {
-    a {
-      @apply text-pink-700 dark:text-pink-600;
-      @apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-rose-100 hover:to-pink-200;  
-      @apply hover:dark:from-orange-900/10 hover:dark:via-rose-900/20 hover:dark:to-pink-800/20;
-    }
-    svg {
-      @apply text-pink-700;
-    }
+  :deep(a) {
+    @apply text-pink-700 dark:text-pink-600;
+    @apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-rose-100 hover:to-pink-200;
+    @apply hover:dark:from-orange-900/10 hover:dark:via-rose-900/20 hover:dark:to-pink-800/20;
   }
 
-  :slotted(.content-meta) {
-    @apply border-pink-700 text-pink-700;
+  :deep(.content-meta) {
+    @apply border-pink-700;
+  }
+
+  :deep(.content-meta-field) {
+    @apply border-pink-700;
+  }
+
+  :deep(#toc) {
+    @apply border-pink-900/80;
   }
 }
 </style>

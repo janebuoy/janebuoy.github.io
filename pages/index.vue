@@ -1,50 +1,30 @@
 <script setup>
-import { useBreakpointTailwindCSS } from 'vue-composable';
-
-/**
- * it uses the default config found :
- * https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
- **/
-const { current } = useBreakpointTailwindCSS();
-const config = useAppConfig();
-const active = ref(true);
-
-/* Fetch Content */
-const { data: posts } = await useAsyncData('in', () => {
-  return queryContent('/')
-    .where({ category: { $in: ['page'] } })
-    .find();
-});
-
-useHead({
-  title: config.title + ' | ' + config.meta[0].content,
-  meta: config.meta,
-});
-
-watch(current, (v) => {
-  if (['md', 'lg', 'xl'].includes(v)) {
-    active.value = true;
-  } else {
-    active.value = false;
-  }
-});
-
-function toggle() {
-  active.value = !active.value;
+const props = defineProps(['posts']);
+const posts = props.posts.filter((e) => e.category.includes('index'));
+const usePattern = true;
+const pattern = ['A', 'B', 'B', 'A'];
+function arrangeCards(index) {
+  return pattern[index % 4];
 }
 </script>
 
 <template>
-  <nav>
-    <h1>{{ config.title }}</h1>
-    <MenuButton @click.prevent="toggle" />
-    <Nav v-show="active" :posts="posts" />
-  </nav>
   <main>
     <div class="content-grid">
-      <ContentCard v-for="post in posts" :key="post._path" :post="post">
+      <ContentCard
+        v-for="(post, index) in posts"
+        :key="post._path"
+        :post="post"
+        :class="[
+          usePattern
+            ? arrangeCards(index) === 'A'
+              ? 'col-span-2'
+              : 'col-span-4'
+            : 'col-span-3',
+        ]"
+      >
         <ContentRenderer :value="post">
-          <ContentText>
+          <ContentText :class="post._path.slice(1) + '-text'">
             <h2 :id="post._path.slice(1)">
               <NuxtLink :to="{ path: '/', hash: '#' + post._path.slice(1) }">
                 {{ post.title }}
@@ -53,8 +33,16 @@ function toggle() {
             <ContentRendererMarkdown :value="post" />
           </ContentText>
         </ContentRenderer>
-        <ContentMeta v-if="post.updatedAt" :post="post" />
+        <ContentMeta v-if="post.meta" :post="post" />
       </ContentCard>
     </div>
   </main>
 </template>
+
+<style lang="postcss" scoped>
+.contact-text {
+  :deep(li:before) {
+    content: none;
+  }
+}
+</style>
