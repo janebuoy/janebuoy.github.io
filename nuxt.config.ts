@@ -17,5 +17,13 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: false,
+    highlight: {
+      preload: ['diff', 'go', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml'],
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark',
+        sepia: 'monokai'
+      }
+    }
   }
 })

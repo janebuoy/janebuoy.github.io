@@ -1,5 +1,5 @@
 const config = {
-  title: 'Micrograph.io',
+  title: 'Micrograph',
   description: 'Programming Ethnographer, Frontend Developer, Web Mapper',
 };
 

@@ -4,7 +4,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      serif: ['Signika', ...defaultTheme.fontFamily.serif],
+      serif: ['Signika Negative', ...defaultTheme.fontFamily.serif],
       sans: [
         'Clear Sans',
         'Roboto',
@@ -15,6 +15,7 @@ module.exports = {
     fontSize: {
       xs: '0.63rem',
       sm: '0.8rem',
+      code: '0.85rem',
       base: '1rem',
       lg: '1.25rem',
       xl: '1.563rem',

@@ -1,92 +1,81 @@
 @tailwind base;
 
 @layer base {
-	/* signika-300 - latin */
+	/* signika-negative-300 - latin */
 	@font-face {
-		font-family: 'Signika';
+		font-family: 'Signika Negative';
 		font-style: normal;
 		font-weight: 300;
-		src: url('../fonts/signika-v20-latin-300.eot');
-		/* IE9 Compat Modes */
+		src: url('../fonts/signika-negative-v20-latin-300.eot'); /* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/signika-v20-latin-300.eot?#iefix') format('embedded-opentype'),
-			/* IE6-IE8 */
-			url('../fonts/signika-v20-latin-300.woff2') format('woff2'),
-			/* Super Modern Browsers */
-			url('../fonts/signika-v20-latin-300.woff') format('woff'),
-			/* Modern Browsers */
-			url('../fonts/signika-v20-latin-300.ttf') format('truetype'),
-			/* Safari, Android, iOS */
-			url('../fonts/signika-v20-latin-300.svg#Signika') format('svg');
-		/* Legacy iOS */
+				url('../fonts/signika-negative-v20-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/signika-negative-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-300.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/signika-negative-v20-latin-300.svg#SignikaNegative') format('svg'); /* Legacy iOS */
 	}
 
-	/* signika-regular - latin */
+	/* signika-negative-regular - latin */
 	@font-face {
-		font-family: 'Signika';
+		font-family: 'Signika Negative';
 		font-style: normal;
 		font-weight: 400;
-		src: url('../fonts/signika-v20-latin-regular.eot');
-		/* IE9 Compat Modes */
+		src: url('../fonts/signika-negative-v20-latin-regular.eot'); /* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/signika-v20-latin-regular.eot?#iefix') format('embedded-opentype'),
-			/* IE6-IE8 */
-			url('../fonts/signika-v20-latin-regular.woff2') format('woff2'),
-			/* Super Modern Browsers */
-			url('../fonts/signika-v20-latin-regular.woff') format('woff'),
-			/* Modern Browsers */
-			url('../fonts/signika-v20-latin-regular.ttf') format('truetype'),
-			/* Safari, Android, iOS */
-			url('../fonts/signika-v20-latin-regular.svg#Signika') format('svg');
-		/* Legacy iOS */
+				url('../fonts/signika-negative-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/signika-negative-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/signika-negative-v20-latin-regular.svg#SignikaNegative') format('svg'); /* Legacy iOS */
 	}
 
-	/* signika-500 - latin */
+	/* signika-negative-500 - latin */
 	@font-face {
-		font-family: 'Signika';
+		font-family: 'Signika Negative';
 		font-style: normal;
 		font-weight: 500;
-		src: url('../fonts/signika-v20-latin-500.eot');
-		/* IE9 Compat Modes */
+		src: url('../fonts/signika-negative-v20-latin-500.eot'); /* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/signika-v20-latin-500.eot?#iefix') format('embedded-opentype'),
-			/* IE6-IE8 */
-			url('../fonts/signika-v20-latin-500.woff2') format('woff2'),
-			/* Super Modern Browsers */
-			url('../fonts/signika-v20-latin-500.woff') format('woff'),
-			/* Modern Browsers */
-			url('../fonts/signika-v20-latin-500.ttf') format('truetype'),
-			/* Safari, Android, iOS */
-			url('../fonts/signika-v20-latin-500.svg#Signika') format('svg');
-		/* Legacy iOS */
+				url('../fonts/signika-negative-v20-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/signika-negative-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-500.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/signika-negative-v20-latin-500.svg#SignikaNegative') format('svg'); /* Legacy iOS */
 	}
 
-	/* signika-600 - latin */
+	/* signika-negative-600 - latin */
 	@font-face {
-		font-family: 'Signika';
+		font-family: 'Signika Negative';
 		font-style: normal;
 		font-weight: 600;
-		src: url('../fonts/signika-v20-latin-600.eot');
-		/* IE9 Compat Modes */
+		src: url('../fonts/signika-negative-v20-latin-600.eot'); /* IE9 Compat Modes */
 		src: local(''),
-			url('../fonts/signika-v20-latin-600.eot?#iefix') format('embedded-opentype'),
-			/* IE6-IE8 */
-			url('../fonts/signika-v20-latin-600.woff2') format('woff2'),
-			/* Super Modern Browsers */
-			url('../fonts/signika-v20-latin-600.woff') format('woff'),
-			/* Modern Browsers */
-			url('../fonts/signika-v20-latin-600.ttf') format('truetype'),
-			/* Safari, Android, iOS */
-			url('../fonts/signika-v20-latin-600.svg#Signika') format('svg');
-		/* Legacy iOS */
+				url('../fonts/signika-negative-v20-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/signika-negative-v20-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-600.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/signika-negative-v20-latin-600.svg#SignikaNegative') format('svg'); /* Legacy iOS */
 	}
 
+	/* signika-negative-700 - latin */
+	@font-face {
+		font-family: 'Signika Negative';
+		font-style: normal;
+		font-weight: 700;
+		src: url('../fonts/signika-negative-v20-latin-700.eot'); /* IE9 Compat Modes */
+		src: local(''),
+				url('../fonts/signika-negative-v20-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/signika-negative-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-700.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/signika-negative-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/signika-negative-v20-latin-700.svg#SignikaNegative') format('svg'); /* Legacy iOS */
+	}
 	html {
 		@apply scroll-smooth -scroll-mt-6;
 	}
 
 	body {
-		@apply p-4 sm:p-8 md:p-10;
+		@apply p-4 sm:p-8 md:py-10 md:px-6;
 		@apply bg-stone-100 dark:bg-zinc-900;
 		background-image: url(assets/noise.png);
 		line-height: 1.75;
@@ -138,8 +127,12 @@
 		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60
 	}
 
-	p, ul, ol {
-		@apply mb-2
+	p, ul, ol, pre {
+		@apply mb-5
+	}
+
+	p + ul, p + ol {
+		@apply pl-6
 	}
 
 	ul > li {
@@ -164,6 +157,18 @@
 		content: counters(item, ".") " ";
 		counter-increment: item;
 		@apply table-cell pr-3 text-slate-900/80 dark:text-slate-300/80 text-base font-serif leading-7;
+	}
+
+	article > div > ol {
+		@apply text-slate-900 dark:text-slate-300
+	}
+
+	code {
+		@apply p-1 bg-zinc-300/40 dark:bg-indigo-900/60 rounded text-code
+	}
+
+	pre > code {
+		@apply bg-transparent dark:bg-transparent p-0
 	}
 
 	nav {
@@ -202,7 +207,7 @@
 	}
 
 	.content-text {
-		@apply p-4 pb-6 md:p-6 md:pb-8 lg:p-10 lg:pb-12
+		@apply px-4 pt-8 pb-6 sm:p-6 sm:pb-8 md:p-8 md:pb-10 lg:p-10 lg:pb-12
 	}
 
 	.content-meta {

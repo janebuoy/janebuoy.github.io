@@ -31,7 +31,8 @@ watch(current, (v) => {
 <template>
   <nav class="md:flex items-center mb-2 md:mb-4">
     <div class="flex items-center justify-between">
-      <h1 class="mb-0 text-2xl xs:text-4xl">{{ config.title }}</h1>
+      <h1 class="mb-0 text-2xl xs:text-4xl hidden md:inline-block">{{ config.title }}</h1>
+      <h1 class="mb-0 text-2xl xs:text-4xl md:hidden">Mugraph</h1>
       <div class="flex items-center justify-end md:hidden">
         <Button
           v-if="isDark"

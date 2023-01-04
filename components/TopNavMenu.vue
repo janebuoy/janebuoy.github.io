@@ -53,7 +53,7 @@ const pathArr = posts.map((e) => e._path.slice(1));
   @apply block py-2 hover:no-underline md:inline;
   @apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
   @apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60;
-  @apply md:py-2 md:px-[0.3rem] lg:px-3;
+  @apply md:py-2 md:px-[0.5rem] lg:px-3;
 }
 .selected {
   @apply bg-gradient-to-tl from-orange-100/50 via-rose-100/50 to-pink-200/50 !border-pink-700 md:!border-l border-t;
