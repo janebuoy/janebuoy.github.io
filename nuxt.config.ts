@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   ssr: true,
   modules: [
     '@nuxt/content',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+		'@nuxtjs/color-mode'
   ],
 	app: {
 			head: {
@@ -25,5 +26,8 @@ export default defineNuxtConfig({
         sepia: 'monokai'
       }
     }
-  }
+  },
+	colorMode: {
+		classSuffix: ''
+	}
 })
