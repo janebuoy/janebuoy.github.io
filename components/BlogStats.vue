@@ -9,7 +9,6 @@ const years = [
 ].sort((a, b) => b - a);
 
 function currentYearsNumbers(posts, year) {
-  const current = new Date();
   let count = 0;
   count = posts.filter(
     (e) => formatDate(e.meta.updatedAt, options) === year

@@ -1,7 +1,7 @@
 <script setup>
 const route = useRoute();
 const { data: posts } = await useAsyncData(() =>
-  queryContent(route.path + '/').find()
+  queryContent(route.path + '/').where({published: true}).find()
 );
 const post = {
   _path: '/blog',
@@ -10,13 +10,13 @@ const post = {
 
 <template>
   <main>
-    <div class="md:grid gap-6 grid-cols-6">
+    <div class="grid-cols-6 gap-6 md:grid">
       <ContentCard class="col-span-3 md:col-span-4" :post="post">
         <ContentText>
           <h2>Blog Entries</h2>
-          <ul>
+          <ul v-if="posts.length > 0">
             <li v-for="post in posts" :key="post._path" class="w-full">
-              <div class="w-full flex justify-between">
+              <div class="flex justify-between w-full">
                 <span>
                   <NuxtLink :to="post._path" class="">{{
                     post.title
@@ -24,11 +24,13 @@ const post = {
                 </span>
                 <Date
                   :date="post.meta.updatedAt"
-                  class="pl-2 md:pl-4 font-serif text-slate-900/80 dark:text-slate-300/80"
+                  class="pl-2 font-serif md:pl-4 text-slate-900/80 dark:text-slate-300/80"
                 />
               </div>
             </li>
           </ul>
+					<p v-else>Oops, nothing here! The developer of this page seems to be busy writing code and has not yet focused on writing anything meaningful.</p>
+					<p>For more, try your luck in the <a href="https:/chaos.social/@mugraph">fediverse</a>!</p>
         </ContentText>
       </ContentCard>
       <BlogStats class="col-span-3 md:col-span-2" :posts="posts" />
