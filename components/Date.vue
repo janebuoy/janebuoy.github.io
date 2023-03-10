@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps(['date']);
 function formatDate(date) {
-  const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-  return new Date(date).toLocaleDateString('en', options);
+  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+  return new Date(date).toLocaleDateString(undefined, options);
 }
 </script>
 

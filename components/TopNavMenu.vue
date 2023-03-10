@@ -59,7 +59,7 @@ const pathArr = posts.map((e) => e._path.slice(1));
   @apply bg-gradient-to-tl from-orange-100/50 via-rose-100/50 to-pink-200/50 !border-pink-700 md:!border-l border-t;
   @apply dark:from-orange-900/20 dark:via-rose-900/20 dark:to-pink-800/20;
   a {
-    @apply text-pink-700;
+    @apply text-pink-500;
     @apply hover:bg-gradient-to-bl hover:from-orange-100 hover:via-rose-100 hover:to-pink-100;
     @apply hover:dark:from-orange-900/10 hover:dark:via-rose-900/20 hover:dark:to-pink-800/20;
   }

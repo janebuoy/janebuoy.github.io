@@ -27,9 +27,14 @@ const props = defineProps(['post']);
   @apply dark:from-orange-900/5 dark:via-rose-900/10 dark:to-pink-800/10;
 
   :deep(a) {
-    @apply text-pink-700 dark:text-pink-600;
+    @apply text-pink-700 dark:text-pink-400;
     @apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-rose-100 hover:to-pink-200;
     @apply hover:dark:from-orange-900/10 hover:dark:via-rose-900/20 hover:dark:to-pink-800/20;
+  }
+
+  :deep(h2>a) {
+    @apply text-pink-700 dark:text-pink-500;
+
   }
 
   :deep(.content-meta) {

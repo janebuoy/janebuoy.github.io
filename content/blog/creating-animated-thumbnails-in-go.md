@@ -3,18 +3,19 @@ title: Creating animated thumbnails with ffmpeg in Go!
 author: Janne Jensen
 category: [blog]
 meta:
-  updatedAt: 2023-01-03T11:28:47+0100
+  updatedAt: 2023-01-03T16:55:00+0100
+  createdAt: 2023-03-09T11:28:47+0100
 ---
 
 Let's start with a little bit of background context: When our local community center had to cancel all in-person events at the height of the pandemic, we began to pursue live streaming and decided to commit to better documentation of past events. As long-time proponents of self-hosted open source software, we did the <del>un</del>reasonable thing and decided to develop our own media archive. We arrived at this conclusion (a) due to data privacy concerns with uploading all of our videos to YouTube, (b) because available self-hostable solutions were slow and had bad UI/UX and (c) for the mere fun and experience that comes with DIY.
 
 ## The right tools for the job
 
-While I began writing Vue & Vuetify for [the user and admin facing side of the project](https://gitlab.com/kukoon/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://gitlab.com/kukoon/mediathek/media-server). After a quite a bit of tweaking and polishing, we had a working prototype enabled us to schedule upcoming live streamins prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
+While I began writing [the user and admin facing side of the project](https://gitlab.com/kukoon/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://gitlab.com/kukoon/mediathek/media-server). After a quite a bit of tweaking and polishing, we had a working prototype enabled us to schedule upcoming live streamins prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
 
 ## Animated thumbnails
 
-On the side, I began to expieriment with `ffmpeg` to generate animated thumbnails for the uploaded videos. The instructions were fairly simply:
+On the side, I began to experiment with `ffmpeg` to generate animated thumbnails for the uploaded videos. The instructions were fairly simply:
 
 1. Prope the video a couple of times and return a list of time stamps
 2. Cut a short segment from the video at each time stamps
