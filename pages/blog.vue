@@ -30,7 +30,7 @@ const post = {
             </li>
           </ul>
 					<p v-else>Oops, nothing here! The developer of this page seems to be busy writing code and has not yet focused on writing anything meaningful.</p>
-					<p>For more, try your luck in the <a href="https:/chaos.social/@mugraph">fediverse</a>!</p>
+					<p>For more, try your luck in the <a href="https://chaos.social/@mugraph">fediverse</a>!</p>
         </ContentText>
       </ContentCard>
       <BlogStats class="col-span-3 md:col-span-2" :posts="posts" />
