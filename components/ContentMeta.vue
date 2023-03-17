@@ -3,7 +3,7 @@ const props = defineProps(['post']);
 </script>
 
 <template>
-  <div class="content-meta">
+  <div class="font-sans content-meta">
     <span v-if="props.post.meta.updatedAt" class="content-meta-field">
       edited: <Date :date="props.post.meta.updatedAt" />
     </span>

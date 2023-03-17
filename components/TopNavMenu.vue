@@ -6,7 +6,7 @@ const pathArr = posts.map((e) => e._path.slice(1));
 </script>
 
 <template>
-  <div id="menu" class="w-full my-4 md:w-fit md:my-0">
+  <div id="menu" class="w-full my-4 md:w-fit md:mb-0 md:mt-4">
     <ul class="justify-end p-0 md:flex">
       <li
         v-for="(post, index) in posts"
@@ -26,7 +26,7 @@ const pathArr = posts.map((e) => e._path.slice(1));
           v-if="post._path !== '/blog'"
           :to="{ path: '/', hash: '#' + post._path.slice(1) }"
         >
-          {{ post._path === '/hello-im-janne' ? 'About Me' : post.title }}
+          {{ post._path === '/hi-im-janne' ? 'About Me' : post.title }}
         </NuxtLink>
         <NuxtLink v-if="post._path === '/blog'" to="/blog">{{ post.title }}</NuxtLink>
       </li>

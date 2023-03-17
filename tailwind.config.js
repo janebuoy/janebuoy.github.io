@@ -4,8 +4,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      serif: ['Signika Negative', ...defaultTheme.fontFamily.serif],
+      serif: ['Space Grotesk', ...defaultTheme.fontFamily.serif],
       sans: [
+				'Signika Negative',
         'Clear Sans',
         'Roboto',
         'Fira Sans',
@@ -17,11 +18,11 @@ module.exports = {
       sm: '0.8rem',
       code: '0.85rem',
       base: '1rem',
-      lg: '1.25rem',
-      xl: '1.563rem',
-      '2xl': '1.953rem',
-      '3xl': '2.441rem',
-      '4xl': '3.052rem',
+      lg: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
     },
     screens: {
       xs: '420px',

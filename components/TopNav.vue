@@ -32,10 +32,10 @@ watch(current, (v) => {
 </script>
 
 <template>
-  <nav class="items-center mb-2 md:flex md:mb-4">
+  <nav class="items-center mb-2 font-sans md:flex md:mb-4">
     <div class="flex items-center justify-between">
       <h1 class="hidden mb-0 text-2xl xs:text-4xl md:inline-block">{{ config.title }}</h1>
-      <h1 class="mb-0 text-2xl xs:text-4xl md:hidden">Mugraph</h1>
+      <h1 class="mb-0 text-3xl xs:text-4xl md:hidden">Mugraph</h1>
       <div class="flex items-center justify-end md:hidden">
         <Button
           v-if="colorMode.value === 'dark'"
@@ -74,14 +74,14 @@ watch(current, (v) => {
         v-if="colorMode.value === 'dark'"
         icon="sun"
         size="base"
-        class="hidden mt-0 ml-2 md:block"
+        class="hidden mt-0 ml-2 md:block md:mt-4"
         @click="toggleColor()"
       />
       <Button
         v-else
         icon="moon"
         size="base"
-        class="hidden mt-0 ml-2 md:block"
+        class="hidden mt-0 ml-2 md:block md:mt-4"
         @click="toggleColor()"
       />
     </div>

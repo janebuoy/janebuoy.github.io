@@ -6,7 +6,7 @@ const props = defineProps(['post']);
 <template>
   <div
     v-if="props.post"
-    class="content-card"
+    class="font-light content-card"
     :class="[
       route.hash.slice(1) === props.post._path.slice(1) ||
       route.href.slice(1) === props.post._path.slice(1)
@@ -16,7 +16,7 @@ const props = defineProps(['post']);
   >
     <slot />
   </div>
-  <div v-else class="content-card">
+  <div v-else class="font-light content-card">
     <slot />
   </div>
 </template>

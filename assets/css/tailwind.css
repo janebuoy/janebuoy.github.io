@@ -1,6 +1,75 @@
 @tailwind base;
 
 @layer base {
+	/* space-grotesk-300 - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Space Grotesk';
+		font-style: normal;
+		font-weight: 300;
+		src: url('../fonts/space-grotesk-v15-latin-300.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/space-grotesk-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/space-grotesk-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-300.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/space-grotesk-v15-latin-300.svg#SpaceGrotesk') format('svg'); /* Legacy iOS */
+	}
+
+	/* space-grotesk-regular - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Space Grotesk';
+		font-style: normal;
+		font-weight: 400;
+		src: url('../fonts/space-grotesk-v15-latin-regular.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/space-grotesk-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/space-grotesk-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/space-grotesk-v15-latin-regular.svg#SpaceGrotesk') format('svg'); /* Legacy iOS */
+	}
+
+	/* space-grotesk-500 - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Space Grotesk';
+		font-style: normal;
+		font-weight: 500;
+		src: url('../fonts/space-grotesk-v15-latin-500.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/space-grotesk-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/space-grotesk-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/space-grotesk-v15-latin-500.svg#SpaceGrotesk') format('svg'); /* Legacy iOS */
+	}
+
+	/* space-grotesk-600 - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Space Grotesk';
+		font-style: normal;
+		font-weight: 600;
+		src: url('../fonts/space-grotesk-v15-latin-600.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/space-grotesk-v15-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/space-grotesk-v15-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-600.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/space-grotesk-v15-latin-600.svg#SpaceGrotesk') format('svg'); /* Legacy iOS */
+	}
+
+	/* space-grotesk-700 - latin */
+	@font-face {
+		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+		font-family: 'Space Grotesk';
+		font-style: normal;
+		font-weight: 700;
+		src: url('../fonts/space-grotesk-v15-latin-700.eot'); /* IE9 Compat Modes */
+		src: url('../fonts/space-grotesk-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../fonts/space-grotesk-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-700.woff') format('woff'), /* Modern Browsers */
+				url('../fonts/space-grotesk-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+				url('../fonts/space-grotesk-v15-latin-700.svg#SpaceGrotesk') format('svg'); /* Legacy iOS */
+	}
 	/* signika-negative-300 - latin */
 	@font-face {
 		font-family: 'Signika Negative';
@@ -94,7 +163,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-serif;
+		@apply font-serif font-semibold;
 		line-height: 1.3;
 		margin: 3rem 0 1.38rem;
 		@apply scroll-mt-6 sm:scroll-mt-[1.75rem];
@@ -110,11 +179,11 @@
 	}
 
 	h1 {
-		@apply mt-0 text-4xl;
+		@apply mt-0 text-4xl uppercase;
 	}
 
 	h2 {
-		@apply text-3xl;
+		@apply text-3xl font-normal;
 	}
 
 	h3 {
@@ -122,7 +191,7 @@
 	}
 
 	a {
-		@apply text-indigo-700 dark:text-indigo-400 hover:underline underline-offset-4;
+		@apply text-indigo-700 dark:text-indigo-400 hover:underline underline-offset-4 font-normal;
 		@apply hover:bg-gradient-to-tl hover:from-orange-100 hover:via-purple-100 hover:to-indigo-100;
 		@apply hover:dark:from-orange-900/20 hover:dark:via-purple-900/20 hover:dark:to-indigo-800/60
 	}
