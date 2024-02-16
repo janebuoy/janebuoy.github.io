@@ -1,7 +1,9 @@
 <script setup>
 const route = useRoute();
 const { data: posts } = await useAsyncData(() =>
-  queryContent(route.path + '/').where({published: true}).find()
+  queryContent(route.path + '/')
+    .where({ published: true })
+    .find()
 );
 const post = {
   _path: '/writing',
@@ -29,8 +31,14 @@ const post = {
               </div>
             </li>
           </ul>
-					<p v-else>Oops, nothing here! The developer of this page seems to be busy writing code and has not yet focused on writing anything meaningful.</p>
-					<p>For more, try your luck in the <a href="https://chaos.social/@mugraph">fediverse</a>!</p>
+          <p v-else>
+            Oops, nothing here! The developer of this page seems to be busy
+            writing code and has not yet focused on writing anything meaningful.
+          </p>
+          <p>
+            For more, head over to the
+            <a href="https://chaos.social/@mugraph">fediverse</a>!
+          </p>
         </ContentText>
       </ContentCard>
       <WritingStats class="col-span-3 md:col-span-2" :posts="posts" />

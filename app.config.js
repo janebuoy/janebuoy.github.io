@@ -1,6 +1,6 @@
 const config = {
   title: 'Micrograph',
-  description: 'Programming Ethnographer, Frontend Developer, Web Mapper',
+  description: 'Research Data Management, Programming, Web Mapping',
 };
 
 export default defineAppConfig({
