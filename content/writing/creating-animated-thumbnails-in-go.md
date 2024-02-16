@@ -1,7 +1,7 @@
 ---
 title: Creating animated thumbnails with ffmpeg in Go!
 author: Janne Jensen
-category: [blog]
+category: [writing]
 published: false
 meta:
   updatedAt: 2023-01-03T16:55:00+0100
@@ -12,7 +12,7 @@ Let's start with a little bit of background context: When our local community ce
 
 ## The right tools for the job
 
-While I began writing [the user and admin facing side of the project](https://gitlab.com/kukoon/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://gitlab.com/kukoon/mediathek/media-server). After a quite a bit of tweaking and polishing, we had a working prototype enabled us to schedule upcoming live streamins prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
+While I began writing [the user and admin facing side of the project](https://gitlab.com/kukoon/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://gitlab.com/kukoon/mediathek/media-server). After a quite a bit of tweaking and polishing, we had a working prototype that enabled us to schedule upcoming live streams prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
 
 ## Animated thumbnails
 
@@ -27,7 +27,7 @@ $ ffprobe -i 'video_file.mp4' -v error -select_streams v:0 \n
 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1
 ```
 
-The correspondig Go function would then look as follows:
+The corresponding Go wrapper would then look as follows:
 
 ```go
 var file string = os.Args[1]

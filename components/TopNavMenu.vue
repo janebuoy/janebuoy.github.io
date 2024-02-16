@@ -23,12 +23,21 @@ const pathArr = posts.map((e) => e._path.slice(1));
         ]"
       >
         <NuxtLink
-          v-if="post._path !== '/blog'"
+          v-if="post._path !== '/writing' && post._path !== '/reading'"
           :to="{ path: '/', hash: '#' + post._path.slice(1) }"
         >
           {{ post._path === '/hi-im-janne' ? 'About Me' : post.title }}
         </NuxtLink>
-        <NuxtLink v-if="post._path === '/blog'" to="/blog">{{ post.title }}</NuxtLink>
+        <NuxtLink v-if="post._path === '/writing'" to="/writing">{{
+          post.title
+        }}</NuxtLink>
+        <!--
+        
+          <NuxtLink v-if="post._path === '/reading'" to="/reading">{{
+          post.title
+        }}</NuxtLink>
+
+        -->
       </li>
     </ul>
   </div>

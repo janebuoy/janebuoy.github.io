@@ -4,7 +4,7 @@ const { data: posts } = await useAsyncData(() =>
   queryContent(route.path + '/').where({published: true}).find()
 );
 const post = {
-  _path: '/blog',
+  _path: '/writing',
 };
 </script>
 
@@ -13,7 +13,7 @@ const post = {
     <div class="grid-cols-6 gap-6 md:grid">
       <ContentCard class="col-span-3 md:col-span-4" :post="post">
         <ContentText>
-          <h2>Blog Entries</h2>
+          <h2>Entries</h2>
           <ul v-if="posts.length > 0">
             <li v-for="post in posts" :key="post._path" class="w-full">
               <div class="flex justify-between w-full">
@@ -33,7 +33,7 @@ const post = {
 					<p>For more, try your luck in the <a href="https://chaos.social/@mugraph">fediverse</a>!</p>
         </ContentText>
       </ContentCard>
-      <BlogStats class="col-span-3 md:col-span-2" :posts="posts" />
+      <WritingStats class="col-span-3 md:col-span-2" :posts="posts" />
     </div>
   </main>
 </template>
