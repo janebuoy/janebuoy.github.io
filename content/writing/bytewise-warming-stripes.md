@@ -11,9 +11,12 @@ meta:
 
 The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [1]. It contains a time series with temperature anomalies between 1850 and 2021, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
 
-As a result, each column represents the temperature anomaly for one year, which, depending on the severity of the anomaly, will displayed as a blue or red RGB color value.
+![warming-stripes-sachsenbruecke.jpeg](/warming-stripes-sachsenbruecke.jpeg)
+Photo: Silvio Bürger, Montage: [Leipzig fürs Klima](https://sachsenbruecke.de/)
 
-For the "bytewise" demonstration, the result should suffice at this point. Of course there are easier ways to achieve this. Maximilian Nöthe has [published a version with a more suitable ColorMap in the Matplotlib blog](https://matplotlib.org/matplotblog/posts/warming-stripes/).
+## Preparations
+
+First, we get read the URL into a `pandas` dataframe.
 
 ```python
 import pandas as pd
@@ -26,13 +29,9 @@ df = pd.read_fwf(url,
                  header=None)                # The original data does not have a header
 ```
 
-## Color Mappings
+As a result, each column of the dataframe represents the temperature anomaly for one year, which, depending on the severity of the anomaly, will be displayed as a blue or red RGB color value.
 
-The anomaly data, representing deviations from a baseline temperature, is first normalized to a range between 0 and 1. This normalization allows us to map these values to specific colors:
-
-- When the normalized anomaly value is 0.5, the corresponding color is white.
-- A normalized value of 0.4 maps to a bluish color.
-- For a normalized value of 0.8, the resulting color is a warm reddish tone.
+We also set a couple of variables that we will need later. We need to be careful here, because the desired width of our image must be a multiple of 4.
 
 ```python
 # Set image dimensions
@@ -43,6 +42,15 @@ height = 25
 image = [] # two-dimensional array of color values (RGB triples)
 row = [] # one-dimensional array of color values (RGB tuples)
 ```
+
+## Color Mappings
+
+The anomaly data, representing deviations from a baseline temperature, is first normalized to a range between 0 and 1. This normalization allows us to map these values to specific colors:
+
+- When the normalized anomaly value is 0.5, the corresponding color is white.
+- A normalized value of 0.4 maps to a bluish color.
+- For a normalized value of 0.8, the resulting color is a warm reddish tone.
+
 
 ```python
 
@@ -71,7 +79,9 @@ for _ in range(height):
     image.append(row)
 ```
 
-$TEXT about the structure of a BMP file.
+## The BMP Format
+
+If you would like to do the deep dive into low level raster graphics, Luna McNulty has done a great job with "[Writing BMP Images from Scratch](https://lmcnulty.me/words/bmp-output/)" in C! The functions to write the actual file have been [adopted from course materials and exercises](https://scm.cms.hu-berlin.de/ibi/damostin/-/blob/master/notebooks/3_Repraesentation_von_Text_Bild_Ton.ipynb) prepared by Robert Jäschke [2].
 
 ```python
 def write_bmp_header(f, file_size):
@@ -115,6 +125,20 @@ Finally, we call the function to assemble the BIP image.
 ```python
 create_bmp_file("image.bmp", width, height)
 ```
+
+## The Result (again)
+
+![image.png](/image.png)
+This is an enlarged version of the resulting [image.bmp](/image.bmb).
+
+![GLOBE---1850-2023-MO.png](https://showyourstripes.info/stripes/GLOBE---1850-2023-MO.png)
+The current version of the warming stripes, spanning the years 1850 to 2023. Graphics and lead scientist: [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php), National Centre for Atmospheric Science, University of Reading., National Centre for Atmospheric Science, UoR.
+
+The color mapping does not match the original, but for this "bytewise" demonstration, it should suffice. Of course, there are easier ways to achieve this -- e.g. Maximilian Nöthe has [published a version with a more suitable ColorMap in the Matplotlib blog](https://matplotlib.org/matplotblog/posts/warming-stripes/).
+
 ## References
 
 [1] C. P. Morice, J. J. Kennedy, N. A. Rayner, and P. D. Jones, “Quantifying uncertainties in global and regional temperature change using an ensemble of observational estimates: The HadCRUT4 data set,” _J. Geophys. Res._, vol. 117, no. D8, p. 2011JD017187, Apr. 2012, doi: [10.1029/2011JD017187](https://doi.org/10.1029/2011JD017187).
+
+[2] R. Jäschke, “Datenstrukturen und -integration.” Mar. 26, 2020. Accessed: Jul. 31, 2024. [Online]. Available: https://scm.cms.hu-berlin.de/ibi/damostin
+
