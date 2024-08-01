@@ -5,7 +5,7 @@ category:
   - writing
 published: true
 meta:
-  updatedAt: 2024-07-31T16:22:47+0100
+  updatedAt: 2024-08-01T08:04:00+0100
   createdAt: 2024-07-31T16:22:47+0100
 ---
 
@@ -131,8 +131,10 @@ create_bmp_file("image.bmp", width, height)
 ![image.png](/image.png)
 This is an enlarged version of the resulting [image.bmp](/image.bmb).
 
+The current version of the warming stripes, spanning the years 1850 to 2023. Notice that we are off by one, as we do not include the year 2023 in our image.
+
 ![GLOBE---1850-2023-MO.png](https://showyourstripes.info/stripes/GLOBE---1850-2023-MO.png)
-The current version of the warming stripes, spanning the years 1850 to 2023. Graphics and lead scientist: [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php), National Centre for Atmospheric Science, University of Reading., National Centre for Atmospheric Science, UoR.
+Graphics and lead scientist: [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php), National Centre for Atmospheric Science, University of Reading., National Centre for Atmospheric Science, UoR.
 
 The color mapping does not match the original, but for this "bytewise" demonstration, it should suffice. Of course, there are easier ways to achieve this -- e.g. Maximilian Nöthe has [published a version with a more suitable ColorMap in the Matplotlib blog](https://matplotlib.org/matplotblog/posts/warming-stripes/).
 
