@@ -81,7 +81,7 @@ for _ in range(height):
 
 ## The BMP Format
 
-If you would like to do the deep dive into low level raster graphics, Luna McNulty has done a great job with "[Writing BMP Images from Scratch](https://lmcnulty.me/words/bmp-output/)" in C! The functions to write the actual file have been [adopted from course materials and exercises](https://scm.cms.hu-berlin.de/ibi/damostin/-/blob/master/notebooks/3_Repraesentation_von_Text_Bild_Ton.ipynb) prepared by Robert Jäschke [2].
+If you would like to do the deep dive into low level raster graphics, Luna McNulty has done a great job with "[Writing BMP Images from Scratch](https://lmcnulty.me/words/bmp-output/)" in C! The functions to write the actual file have been adopted from [course materials and exercises](https://scm.cms.hu-berlin.de/ibi/damostin/-/blob/master/notebooks/3_Repraesentation_von_Text_Bild_Ton.ipynb) prepared by Robert Jäschke [2].
 
 ```python
 def write_bmp_header(f, file_size):
