@@ -29,5 +29,8 @@
     "vite-plugin-eslint": "^1.8.1",
     "vue-composable": "^1.0.0-beta.24",
     "vue-eslint-parser": "^9.1.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1"
   }
 }

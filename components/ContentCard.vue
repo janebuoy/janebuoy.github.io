@@ -6,7 +6,7 @@ const props = defineProps(['post']);
 <template>
   <div
     v-if="props.post"
-    class="font-light content-card"
+    class="font-light content-card justify-between"
     :class="[
       route.hash.slice(1) === props.post._path.slice(1) ||
       route.href.slice(1) === props.post._path.slice(1)

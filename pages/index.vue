@@ -1,10 +1,19 @@
 <script setup>
 const props = defineProps(['posts']);
-const posts = props.posts.filter((e) => e.category.includes('index'));
-const usePattern = true;
-const pattern = ['A', 'B', 'B', 'A'];
-function arrangeCards(index) {
-  return pattern[index % 4];
+const debug = false
+
+function getPosts(debug, posts) {
+  if (!debug) return posts.filter(e => !e._path.startsWith('/test') && e.category.includes('index'))
+  return posts.filter(e => e._path.startsWith('/test'))
+}
+
+const posts = getPosts(debug, props.posts)
+
+const usePattern = true
+const pattern = ['3', '3', '4', '2', '2', '4', '3', '3', '2', '2', '2', '3', '3', '6', '2', '4'];
+
+function getWidth(index) { 
+  return pattern[index % 16];
 }
 </script>
 
@@ -16,11 +25,11 @@ function arrangeCards(index) {
         :key="post._path"
         :post="post"
         :class="[
-          usePattern
-            ? arrangeCards(index) === 'A'
-              ? 'col-span-2'
-              : 'col-span-4'
-            : 'col-span-3',
+        usePattern ? getWidth(index) === '2'
+          ? 'col-span-2' : getWidth(index) === '4'
+            ? 'col-span-4' : getWidth(index) === '6'
+              ? 'col-span-6' : 'col-span-3'
+          : 'col-span-3'
         ]"
       >
         <ContentRenderer :value="post">
