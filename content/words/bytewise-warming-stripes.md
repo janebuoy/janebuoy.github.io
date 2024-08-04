@@ -40,7 +40,8 @@ We also set a couple of variables that we will need later. We need to be careful
 
 ```python
 # Set image dimensions
-width = len(df.index) # Only multiples of 4! Fortunately, len(df.index) is 172 :)
+# Only multiples of 4! Fortunately, len(df.index) is 172 :)
+width = len(df.index)
 assert width % 4 == 0, "Width must be a multiple of 4!"
 height = 25
 
@@ -58,7 +59,6 @@ The anomaly data, representing deviations from a baseline temperature, is first 
 
 
 ```python
-
 for column in range(width):
     anomaly = df.to_numpy()[column][0]
 
