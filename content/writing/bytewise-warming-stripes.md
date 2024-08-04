@@ -11,7 +11,7 @@ meta:
 
 The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [1]. It contains a time series with temperature anomalies between 1850 and 2021, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
 
-![warming-stripes-sachsenbruecke.jpeg](/warming-stripes-sachsenbruecke.jpeg)
+![Warming Stripes installation in Leipzig](/warming-stripes-sachsenbruecke.png)
 Photo: Silvio Bürger, Montage: [Leipzig fürs Klima](https://sachsenbruecke.de/)
 
 ## Preparations
@@ -128,12 +128,12 @@ create_bmp_file("image.bmp", width, height)
 
 ## The Result (again)
 
-![image.png](/image.png)
+![The output of our script: Warming stripes with data from 1850 to 2022](/image.png)
 This is an enlarged version of the resulting [image.bmp](/image.bmb).
 
 The current version of the warming stripes, spanning the years 1850 to 2023. Notice that we are off by one, as we do not include the year 2023 in our image.
 
-![GLOBE---1850-2023-MO.png](https://showyourstripes.info/stripes/GLOBE---1850-2023-MO.png)
+![Warming Stripes rendering with data from 1850 to 2023](https://showyourstripes.info/stripes/GLOBE---1850-2023-MO.png)
 Graphics and lead scientist: [Ed Hawkins](http://www.met.reading.ac.uk/~ed/home/index.php), National Centre for Atmospheric Science, University of Reading., National Centre for Atmospheric Science, UoR.
 
 The color mapping does not match the original, but for this "bytewise" demonstration, it should suffice. Of course, there are easier ways to achieve this -- e.g. Maximilian Nöthe has [published a version with a more suitable ColorMap in the Matplotlib blog](https://matplotlib.org/matplotblog/posts/warming-stripes/).
