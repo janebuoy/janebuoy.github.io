@@ -34,8 +34,16 @@ watch(current, (v) => {
 <template>
   <nav class="items-center mb-2 font-sans md:flex md:mb-4">
     <div class="flex items-center justify-between">
-      <h1 class="hidden mb-0 text-2xl xs:text-4xl md:inline-block">{{ config.title }}</h1>
-      <h1 class="mb-0 text-3xl xs:text-4xl md:hidden">Mugraph</h1>
+      <h1 class="hidden mb-0 text-2xl xs:text-4xl md:inline-block">
+        <a href="/" class="bg-gradient-to-tl dark:!from-pink-700 !from-pink-600 dark:!via-purple-400 !via-purple-500 dark:!to-indigo-600 !to-indigo-700 inline-block dark:!text-white !text-black dark:hover:!text-transparent hover:!text-transparent bg-clip-text font-semibold hover:no-underline">
+        {{ config.title }}
+        </a>
+      </h1>
+      <h1 class="mb-0 text-3xl xs:text-4xl md:hidden">
+        <a href="/" class="bg-gradient-to-tl dark:!from-pink-700 !from-pink-600 dark:!via-purple-400 !via-purple-500 dark:!to-indigo-600 !to-indigo-700 inline-block dark:!text-white !text-black dark:hover:!text-transparent hover:!text-transparent bg-clip-text font-semibold hover:no-underline">
+        Mugraph
+        </a>
+      </h1>
       <div class="flex items-center justify-end md:hidden">
         <Button
           v-if="colorMode.value === 'dark'"

@@ -6,7 +6,7 @@ const { data: posts } = await useAsyncData(() =>
     .find()
 );
 const post = {
-  _path: '/writing',
+  _path: '/words',
 };
 </script>
 
@@ -15,7 +15,7 @@ const post = {
     <div class="grid-cols-6 gap-6 md:grid">
       <ContentCard class="col-span-3 md:col-span-4" :post="post">
         <ContentText>
-          <h2>Entries</h2>
+          <h2>Words</h2>
           <ul v-if="posts.length > 0">
             <li v-for="post in posts" :key="post._path" class="w-full">
               <div class="flex justify-between w-full">

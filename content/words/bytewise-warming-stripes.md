@@ -2,7 +2,7 @@
 title: Bytewise warming stripes with python!
 author: Janne Jensen
 category:
-  - writing
+  - words
 published: true
 meta:
   updatedAt: 2024-08-01T08:04:00+0100
@@ -21,12 +21,17 @@ First, we get read the URL into a `pandas` dataframe.
 ```python
 import pandas as pd
 
-url = "https://www.metoffice.gov.uk/hadobs/hadcrut4/data/current/time_series/HadCRUT.4.6.0.0.annual_ns_avg.txt"
-df = pd.read_fwf(url,
-                 index_col=0,                # Use column 0 as the index
-                 usecols=(0, 1),             # Use only columns 0 and 1 from the original data
-                 names=['year', 'anomaly'],  # Set custom column names
-                 header=None)                # The original data does not have a header
+fqdn = "https://www.metoffice.gov.uk"
+filepath = "/hadobs/hadcrut4/data/current/time_series/HadCRUT.4.6.0.0.annual_ns_avg.txt"
+df = pd.read_fwf(fqdn + filepath,
+                 # Use column 0 as the index
+                 index_col=0,
+                 # Use only columns 0 and 1 from the original data
+                 usecols=(0, 1),
+                 # Set custom column names
+                 names=['year', 'anomaly'],
+                 # The original data does not have a header
+                 header=None)
 ```
 
 As a result, each column of the dataframe represents the temperature anomaly for one year, which, depending on the severity of the anomaly, will be displayed as a blue or red RGB color value.
