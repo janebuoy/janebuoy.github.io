@@ -1,14 +1,14 @@
 <script setup>
 const route = useRoute();
 const props = defineProps(['post']);
-import { selectedClass } from '../utils/selectedHack';
+import { selectedClassCard } from '../utils/selectedHack';
 </script>
 
 <template>
   <div
     v-if="props.post"
     class="font-light content-card justify-between"
-    :class="[selectedClass(route, post) ? 'selected' : null]"
+    :class="[selectedClassCard(route, post) ? 'selected' : null]"
   >
     <slot />
   </div>

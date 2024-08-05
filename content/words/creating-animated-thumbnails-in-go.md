@@ -4,7 +4,9 @@ author: Janne Jensen
 category: [words]
 published: true
 tags:
-  - golang
+  - go
+  - bash
+  - ffmpeg
 meta:
   updatedAt: 2023-01-03T16:55:00+0100
   createdAt: 2023-03-09T11:28:47+0100
@@ -12,7 +14,7 @@ meta:
 
 Let's start with a little bit of context: When our local community center had to cancel in-person events at the height of the pandemic, we began to pursue live streaming and decided to commit to better documentation of past events. We did the <del>un</del>reasonable thing and decided to develop our own media archive und streaming platform for a number of reasons: (a) due to data privacy concerns with uploading all of our content to major platforms, (b) because available self-hostable solutions were slow and had bad UI/UX and (c) for the mere fun and experience that comes with DIY.
 
-While I began writing [the user and admin facing side of the project](https://codeberg.org/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://codeberg.org/mediathek/media-server). After quite a bit of tweaking and polishing, we had a working prototype that enabled us to schedule upcoming live streams prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
+While I began doing [the user and admin interfaces](https://codeberg.org/mediathek/media-ui), my colleague elegantly stitched together the necessary PostgreSQL database and OvenMediaEngine (OME) server [for the backend](https://codeberg.org/mediathek/media-server). After quite a bit of tweaking and polishing, we had a working prototype that enabled us to schedule upcoming live streams prior to the event using the the admin dashboard. When on site, we simply fired up OBS and went live within a second or less, thanks to the WebRTC and HLS protocols provided by OME.
 
 ## Animated thumbnails
 
@@ -24,7 +26,7 @@ On the side, we began to experiment with `ffmpeg` to generate animated thumbnail
 
 The approach might be a bit naive, but it worked fairly well.
 
-```shell
+```bash
 $ ffprobe -i 'video_file.mp4' -v error -select_streams v:0 \n
 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1
 ```

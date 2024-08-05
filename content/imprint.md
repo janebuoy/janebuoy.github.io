@@ -4,4 +4,9 @@ author: Janne Jensen
 category: post
 ---
 
-Kontakt: micrograph@posteo.de
+```
+Janne Jensen
+Hegelstraße 44
+28201 Bremen
+micrograph@posteo.de
+```

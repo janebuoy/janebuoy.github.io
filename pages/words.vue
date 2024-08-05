@@ -5,12 +5,23 @@ const post = {
 };
 
 // see: https://nuxt.com/docs/migration/component-options#watchquery
-const { data: posts, refresh } = await useAsyncData(() =>
-  queryContent(route.path + '/')
-    .where({ published: true })
-    .where({ tags: { $in: route.query.tags } })
-    .find()
-);
+const { data: posts, refresh } = await useAsyncData(() => {
+  let query = queryContent(route.path + '/').where({ published: true });
+
+  if (route.query.tags) {
+    query = query.where({ tags: { $in: route.query.tags } });
+  }
+
+  if (route.query.year) {
+    const startDate = new Date(`${route.query.year}-01-01`);
+    const endDate = new Date(`${route.query.year}-12-31`);
+    query = query.where({
+      meta: { updatedAt: { $gte: startDate, $lt: endDate } },
+    });
+  }
+
+  return query.find();
+});
 
 watch(
   () => route.query,
@@ -30,6 +41,9 @@ watch(
             Words
             <span v-if="'tags' in route.query" class="text-lg">
               (filtered by tags)
+            </span>
+            <span v-if="'year' in route.query" class="text-lg">
+              (filtered by year)
             </span>
             <span v-else class="text-lg"></span>
           </h2>
