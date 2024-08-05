@@ -7,7 +7,7 @@ const pathArr = posts.map((e) => e._path.slice(1));
 
 <template>
   <div id="menu" class="w-full my-4 md:w-fit md:mb-0 md:mt-4">
-    <ul class="justify-end p-0 md:flex">
+    <ul class="justify-end p-0 md:flex max-md:mb-0">
       <li
         v-for="(post, index) in posts"
         :key="post._path"

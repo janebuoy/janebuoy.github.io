@@ -17,7 +17,7 @@ const post = {
       <ContentCard class="col-span-3 md:col-span-4" :post="post">
         <ContentText> Hello! Welcome to {{ post._path }} </ContentText>
       </ContentCard>
-      <WritingStats class="col-span-3 md:col-span-2" :posts="posts" />
+      <WordsAside class="col-span-3 md:col-span-2" :posts="posts" />
     </div>
   </main>
 </template>

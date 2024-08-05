@@ -24,7 +24,13 @@ watch(
         :path="path"
       >
         <ContentText>
-          <h2>Words</h2>
+          <h2>
+            Words
+            <span v-if="'tags' in route.query" class="text-lg">
+              (filtered by tags)
+            </span>
+            <span v-else class="text-lg"></span>
+          </h2>
           <ul v-if="posts.length > 0">
             <li v-for="post in posts" :key="post._path" class="w-full flex">
               <div class="flex justify-between w-full">
@@ -49,7 +55,7 @@ watch(
           </p>
         </ContentText>
       </ContentCard>
-      <WritingStats class="col-span-3 md:col-span-2" :posts="posts" />
+      <WordsAside class="col-span-3 md:col-span-2" :posts="posts" />
     </div>
   </main>
 </template>
