@@ -3,6 +3,8 @@ const route = useRoute();
 const props = defineProps(['posts']);
 const posts = props.posts.filter((e) => e.category.includes('menu'));
 const pathArr = posts.map((e) => e._path.slice(1));
+
+import { selectedClass, borderClasses } from '../utils/selectedHack';
 </script>
 
 <template>
@@ -12,12 +14,8 @@ const pathArr = posts.map((e) => e._path.slice(1));
         v-for="(post, index) in posts"
         :key="post._path"
         :class="[
-          route.hash.slice(1) === post._path.slice(1) ||
-          route.href.slice(1) === post._path.slice(1)
-            ? 'selected'
-            : null,
-          pathArr.indexOf(route.hash.slice(1)) === index + 1 ||
-          pathArr.indexOf(route.href.slice(1)) === index + 1
+          selectedClass(route, post) ? 'selected' : null,
+          borderClasses(route, pathArr, index)
             ? 'md:!border-r-0 md:!border-b !border-b-0'
             : null,
         ]"
@@ -31,13 +29,6 @@ const pathArr = posts.map((e) => e._path.slice(1));
         <NuxtLink v-if="post._path === '/words'" to="/words">{{
           post.title
         }}</NuxtLink>
-        <!--
-        
-          <NuxtLink v-if="post._path === '/reading'" to="/reading">{{
-          post.title
-        }}</NuxtLink>
-
-        -->
       </li>
     </ul>
   </div>

@@ -1,6 +1,8 @@
 <script setup>
 const route = useRoute();
-const path = '/words';
+const post = {
+  _path: '/words',
+};
 
 // see: https://nuxt.com/docs/migration/component-options#watchquery
 const { data: posts, refresh } = await useAsyncData(() =>
@@ -21,7 +23,7 @@ watch(
     <div class="grid-cols-6 gap-6 md:grid">
       <ContentCard
         class="col-span-3 md:col-span-4 flex justify-between"
-        :path="path"
+        :post="post"
       >
         <ContentText>
           <h2>

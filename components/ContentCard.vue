@@ -1,18 +1,14 @@
 <script setup>
 const route = useRoute();
-const props = defineProps(['path']);
+const props = defineProps(['post']);
+import { selectedClass } from '../utils/selectedHack';
 </script>
 
 <template>
   <div
-    v-if="props.path"
+    v-if="props.post"
     class="font-light content-card justify-between"
-    :class="[
-      route.hash.slice(1) === props.path.slice(1) ||
-      route.href.slice(1) === props.path.slice(1)
-        ? 'selected'
-        : null,
-    ]"
+    :class="[selectedClass(route, post) ? 'selected' : null]"
   >
     <slot />
   </div>

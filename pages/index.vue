@@ -1,18 +1,27 @@
 <script setup>
 const props = defineProps(['posts']);
-const debug = false
+const pattern = [
+  '3',
+  '3',
+  '4',
+  '2',
+  '2',
+  '4',
+  '3',
+  '3',
+  '2',
+  '2',
+  '2',
+  '3',
+  '3',
+  '6',
+  '2',
+  '4',
+];
 
-function getPosts(debug, posts) {
-  if (!debug) return posts.filter(e => !e._path.startsWith('/test') && e.category.includes('index'))
-  return posts.filter(e => e._path.startsWith('/test'))
-}
+const posts = props.posts.filter((e) => e.category.includes('index'));
 
-const posts = getPosts(debug, props.posts)
-
-const usePattern = true
-const pattern = ['3', '3', '4', '2', '2', '4', '3', '3', '2', '2', '2', '3', '3', '6', '2', '4'];
-
-function getWidth(index) { 
+function getWidth(index) {
   return pattern[index % 16];
 }
 </script>
@@ -25,11 +34,13 @@ function getWidth(index) {
         :key="post._path"
         :post="post"
         :class="[
-        usePattern ? getWidth(index) === '2'
-          ? 'col-span-2' : getWidth(index) === '4'
-            ? 'col-span-4' : getWidth(index) === '6'
-              ? 'col-span-6' : 'col-span-3'
-          : 'col-span-3'
+          getWidth(index) === '2'
+            ? 'col-span-2'
+            : getWidth(index) === '4'
+            ? 'col-span-4'
+            : getWidth(index) === '6'
+            ? 'col-span-6'
+            : 'col-span-3',
         ]"
       >
         <ContentRenderer :value="post">
