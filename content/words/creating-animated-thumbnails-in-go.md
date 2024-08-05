@@ -3,6 +3,8 @@ title: Creating animated thumbnails with ffmpeg in Go!
 author: Janne Jensen
 category: [words]
 published: true
+tags:
+  - golang
 meta:
   updatedAt: 2023-01-03T16:55:00+0100
   createdAt: 2023-03-09T11:28:47+0100

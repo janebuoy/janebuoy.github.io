@@ -1,15 +1,15 @@
 <script setup>
 const route = useRoute();
-const props = defineProps(['post']);
+const props = defineProps(['path']);
 </script>
 
 <template>
   <div
-    v-if="props.post"
+    v-if="props.path"
     class="font-light content-card justify-between"
     :class="[
-      route.hash.slice(1) === props.post._path.slice(1) ||
-      route.href.slice(1) === props.post._path.slice(1)
+      route.hash.slice(1) === props.path.slice(1) ||
+      route.href.slice(1) === props.path.slice(1)
         ? 'selected'
         : null,
     ]"
@@ -32,9 +32,8 @@ const props = defineProps(['post']);
     @apply hover:dark:from-orange-900/10 hover:dark:via-rose-900/20 hover:dark:to-pink-800/20;
   }
 
-  :deep(h2>a) {
+  :deep(h2 > a) {
     @apply text-pink-700 dark:text-pink-500;
-
   }
 
   :deep(.content-meta) {

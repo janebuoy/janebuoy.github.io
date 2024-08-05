@@ -4,5 +4,6 @@
     "CNAME": true,
     "node_modules": true,
     ".nuxt": true
-  }
+  },
+  "editor.formatOnSave": true
 }

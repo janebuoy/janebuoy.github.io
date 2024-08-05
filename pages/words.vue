@@ -1,23 +1,32 @@
 <script setup>
 const route = useRoute();
-const { data: posts } = await useAsyncData(() =>
+const path = '/words';
+
+// see: https://nuxt.com/docs/migration/component-options#watchquery
+const { data: posts, refresh } = await useAsyncData(() =>
   queryContent(route.path + '/')
     .where({ published: true })
+    .where({ tags: { $in: route.query.tags } })
     .find()
 );
-const post = {
-  _path: '/words',
-};
+
+watch(
+  () => route.query,
+  () => refresh()
+);
 </script>
 
 <template>
   <main>
     <div class="grid-cols-6 gap-6 md:grid">
-      <ContentCard class="col-span-3 md:col-span-4" :post="post">
+      <ContentCard
+        class="col-span-3 md:col-span-4 flex justify-between"
+        :path="path"
+      >
         <ContentText>
           <h2>Words</h2>
           <ul v-if="posts.length > 0">
-            <li v-for="post in posts" :key="post._path" class="w-full">
+            <li v-for="post in posts" :key="post._path" class="w-full flex">
               <div class="flex justify-between w-full">
                 <span>
                   <NuxtLink :to="post._path" class="">{{
@@ -26,15 +35,14 @@ const post = {
                 </span>
                 <Date
                   :date="post.meta.updatedAt"
-                  class="pl-2 font-serif md:pl-4 text-slate-900/80 dark:text-slate-300/80"
+                  class="text-sm mt-1 pl-2 font-serif md:pl-4 text-slate-900/80 dark:text-slate-300/80"
                 />
               </div>
             </li>
           </ul>
-          <p v-else>
-            Oops, nothing here! The developer of this page seems to be busy
-            writing code and has not yet focused on writing anything meaningful.
-          </p>
+          <p v-else>Oops, nothing here!</p>
+        </ContentText>
+        <ContentText>
           <p>
             For more, head over to the
             <a href="https://chaos.social/@mugraph">fediverse</a>!

@@ -7,14 +7,19 @@ export default defineNuxtConfig({
 		'@nuxtjs/color-mode'
   ],
 	app: {
-			head: {
-					link: [{ rel: 'icon', type: 'image/png', href: '/favicon/favicon-32x32.png' }]
-			},
+		head: {
+				link: [{ rel: 'icon', type: 'image/png', href: '/favicon/favicon-32x32.png' }]
+		},
 	},
   vue: {
     compilerOptions: {
       isCustomElement: tag => ['author'].includes(tag)
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/words/feed', '/words/json', '/words/atom'],
+    },
   },
   content: {
     documentDriven: false,

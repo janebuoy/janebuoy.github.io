@@ -4,6 +4,9 @@ author: Janne Jensen
 category:
   - words
 published: true
+tags:
+  - python
+  - data visualisation
 meta:
   updatedAt: 2024-08-01T08:04:00+0100
   createdAt: 2024-07-31T16:22:47+0100
