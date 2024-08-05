@@ -60,7 +60,6 @@ The anomaly data, representing deviations from a baseline temperature, is first 
 - A normalized value of 0.4 maps to a bluish color.
 - For a normalized value of 0.8, the resulting color is a warm reddish tone.
 
-
 ```python
 for column in range(width):
     anomaly = df.to_numpy()[column][0]
@@ -106,10 +105,10 @@ def write_dib_header(f, width, height):
     f.write(int.to_bytes(height, 4, "little"))  # Height of the image
     f.write(int.to_bytes(1, 2, "little"))  # Number of color planes, must be 1
     f.write(int.to_bytes(24, 2, "little"))  # Bits per pixel (24 for RGB)
-    f.write(int.to_bytes(0, 4, "little"))  # Compression method (0 = no compression)
+    f.write(int.to_bytes(0, 4, "little"))  # Compression method
     f.write(int.to_bytes(3 * width * height, 4, "little"))  # Image size in bytes
-    f.write(int.to_bytes(0, 4, "little"))  # Horizontal resolution (pixels per meter)
-    f.write(int.to_bytes(0, 4, "little"))  # Vertical resolution (pixels per meter)
+    f.write(int.to_bytes(0, 4, "little"))  # Horizontal resolution
+    f.write(int.to_bytes(0, 4, "little"))  # Vertical resolution
     f.write(int.to_bytes(0, 4, "little"))  # Number of colors in the palette
     f.write(int.to_bytes(0, 4, "little"))  # Important colors used
 
@@ -121,7 +120,7 @@ def create_bmp_file(filename, width, height):
         # Write the BMP and DIB headers
         write_bmp_header(f, file_size)
         write_dib_header(f, width, height)
-        
+
         # Write image data
         for row in reversed(image):
             for column in row:
@@ -130,6 +129,7 @@ def create_bmp_file(filename, width, height):
 ```
 
 Finally, we call the function to assemble the BIP image.
+
 ```python
 create_bmp_file("image.bmp", width, height)
 ```
@@ -151,4 +151,3 @@ The color mapping does not match the original, but for this "bytewise" demonstra
 [1] C. P. Morice, J. J. Kennedy, N. A. Rayner, and P. D. Jones, “Quantifying uncertainties in global and regional temperature change using an ensemble of observational estimates: The HadCRUT4 data set,” _J. Geophys. Res._, vol. 117, no. D8, p. 2011JD017187, Apr. 2012, doi: [10.1029/2011JD017187](https://doi.org/10.1029/2011JD017187).
 
 [2] R. Jäschke, “Datenstrukturen und -integration.” Mar. 26, 2020. Accessed: Jul. 31, 2024. [Online]. Available: https://scm.cms.hu-berlin.de/ibi/damostin
-
