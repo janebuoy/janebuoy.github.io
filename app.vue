@@ -1,7 +1,13 @@
 <script setup>
+
 const { data: posts } = await useAsyncData(() => {
   return queryContent('/').find();
 });
+
+onMounted( () => {
+  const {$startTracking} = useNuxtApp()
+  $startTracking()
+})
 
 useHead({
   link: [{

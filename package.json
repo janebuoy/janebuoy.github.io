@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@openreplay/tracker": "^14.0.4",
     "feed": "^4.2.2"
   }
 }

@@ -1,0 +1,15 @@
+import {startTracker} from '../utils/tracker'
+
+export default defineNuxtPlugin((nuxtApp) => {
+    return {
+        provide: {
+            startTracking: () => {
+                let config = useRuntimeConfig().public
+                
+                startTracker({
+                    projectKey: config.openreplayProjectKey
+                })
+            }
+        }
+    }
+})
