@@ -3,10 +3,9 @@ import Tracker from '@openreplay/tracker';
 function startTracker(key) {
 
     console.log('Starting tracker...')
-    console.log(key);
 
     const trackerConfig = {
-        projectKey: key
+        projectKey: key.projectKey
     }
 
     const tracker = new Tracker(trackerConfig);
