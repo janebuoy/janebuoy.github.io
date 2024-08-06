@@ -32,7 +32,8 @@ export default defineNuxtConfig({
       }
     },
     experimental: {
-      clientDB: true
+      clientDB: true,
+      stripQueryParameters: true
     }
   },
 	colorMode: {
