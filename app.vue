@@ -5,7 +5,7 @@ const { data: posts } = await useAsyncData(() => {
 });
 
 onMounted( () => {
-  const {$startTracking} = useNuxtApp()
+  const { $startTracking } = useNuxtApp()
   $startTracking()
 })
 

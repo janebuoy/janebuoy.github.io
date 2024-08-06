@@ -21,6 +21,9 @@ export default defineNuxtConfig({
       openreplayProjectKey: process.env.NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY
     }
   },
+  plugins: [
+    './utils/tracker.js'
+  ],
   nitro: {
     prerender: {
       routes: ['/words/feed', '/words/json', '/words/atom'],
