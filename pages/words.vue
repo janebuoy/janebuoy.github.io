@@ -8,7 +8,7 @@ const post = {
 const { data: posts, refresh } = await useAsyncData(() =>
   queryContent(route.path + '/')
     .where({ published: true })
-    .where({ tags: { $in: route.query.tags } })
+    //.where({ tags: { $in: route.query.tags } })
     .find()
 );
 

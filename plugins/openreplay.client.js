@@ -7,7 +7,6 @@ export default defineNuxtPlugin(nuxtApp => {
         provide: {
             startTracking: () => {
                 let key = useRuntimeConfig().public.openreplayProjectKey
-                console.log('Config:', key);
                 
                 startTracker({
                     projectKey: key
