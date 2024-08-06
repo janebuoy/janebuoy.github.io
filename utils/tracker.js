@@ -1,11 +1,12 @@
 import Tracker from '@openreplay/tracker';
 
-export function startTracker(config) {
+function startTracker(key) {
 
     console.log('Starting tracker...')
+    console.log(key);
 
     const trackerConfig = {
-        projectKey: config?.projectKey
+        projectKey: key
     }
 
     const tracker = new Tracker(trackerConfig);
@@ -16,3 +17,5 @@ export function startTracker(config) {
         tracker
     }
 }
+
+export default startTracker;
