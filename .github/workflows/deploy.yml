@@ -36,7 +36,7 @@ jobs:
       - run: yarn install
       - run: yarn generate
         env:
-          - NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY: ${{ secrets.NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY }}
+          NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY: ${{ secrets.NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
