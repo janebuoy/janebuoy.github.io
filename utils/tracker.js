@@ -5,7 +5,7 @@ export function startTracker(config) {
     console.log('Starting tracker...')
 
     const trackerConfig = {
-        projectKey: process.env.NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY
+        projectKey: config?.projectKey
     }
 
     const tracker = new Tracker(trackerConfig);

@@ -1,6 +1,7 @@
 import {startTracker} from '../utils/tracker'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(nuxtApp => {
+    console.log('using client plugin');
     return {
         provide: {
             startTracking: () => {

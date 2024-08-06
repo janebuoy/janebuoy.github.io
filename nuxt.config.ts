@@ -16,6 +16,11 @@ export default defineNuxtConfig({
       isCustomElement: tag => ['author'].includes(tag)
     }
   },
+  runtimeConfig: {
+    public: {
+      openreplayProjectKey: process.env.NUXT_PUBLIC_OPENREPLAY_PROJECT_KEY
+    }
+  },
   nitro: {
     prerender: {
       routes: ['/words/feed', '/words/json', '/words/atom'],
