@@ -12,7 +12,7 @@ meta:
   createdAt: 2024-07-31T16:22:47+0100
 ---
 
-The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [1]. It contains a time series with temperature anomalies between 1850 and 2021, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
+The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [1]. It contains a time series with temperature anomalies between 1850 and 2022, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
 
 ![Warming Stripes installation in Leipzig](/warming-stripes-sachsenbruecke.png)
 Photo: Silvio Bürger, Montage: [Leipzig fürs Klima](https://sachsenbruecke.de/)
