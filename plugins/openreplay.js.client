@@ -1,11 +1,14 @@
-import {startTracker} from '../utils/tracker'
+import { startTracker } from '../utils/tracker'
+console.log(typeof startTracker); // Should output 'function'
 
 export default defineNuxtPlugin(nuxtApp => {
+    console.log('Nuxt App:', nuxtApp);
     console.log('using client plugin');
     return {
         provide: {
             startTracking: () => {
                 let config = useRuntimeConfig().public
+                console.log('Config:', config);
                 
                 startTracker({
                     projectKey: config.openreplayProjectKey
