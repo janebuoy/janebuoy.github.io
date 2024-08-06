@@ -30,6 +30,9 @@ export default defineNuxtConfig({
         dark: 'github-dark',
         sepia: 'monokai'
       }
+    },
+    experimental: {
+      clientDB: true
     }
   },
 	colorMode: {
