@@ -12,7 +12,7 @@ meta:
   createdAt: 2024-07-31T16:22:47+0100
 ---
 
-The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [1]. It contains a time series with temperature anomalies between 1850 and 2022, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
+The [Warming Stripes](https://en.wikipedia.org/wiki/Warming_stripes) are a now famous example of successful data visualization! And rightly so. Here, I show how the same visualization of global temperature anomalies can be recreated "bytewise" using Python. I have done this originally in an `.ipynb` notebook, but decided to publish it here in more succinct form. The underlying dataset is [HadCRUT4](https://doi.org/10.1029/2011JD017187) from the Met Office Hadley Centre [\[1\]](#ref1){#cite1}. It contains a time series with temperature anomalies between 1850 and 2022, which are the median of 100 regional observation series. The relative anomalies refer to the reference time period 1961-1990.
 
 ![Warming Stripes installation in Leipzig](/warming-stripes-sachsenbruecke.png)
 Photo: Silvio Bürger, Montage: [Leipzig fürs Klima](https://sachsenbruecke.de/)
@@ -62,7 +62,7 @@ The anomaly data, representing deviations from a baseline temperature, is first 
 
 ```python
 for column in range(width):
-    anomaly = df.to_numpy()[column][0]
+    anomaly = df.to_numpy()[column][\[0\]](#ref0){#cite0}
 
     # Normalize value:
     # [-1, 1] plus 1 is [0, 2]
@@ -88,7 +88,7 @@ for _ in range(height):
 
 ## The BMP Format
 
-If you would like to do the deep dive into low level raster graphics, Luna McNulty has done a great job with "[Writing BMP Images from Scratch](https://lmcnulty.me/words/bmp-output/)" in C! The functions to write the actual file have been adopted from [course materials and exercises](https://scm.cms.hu-berlin.de/ibi/damostin/-/blob/master/notebooks/3_Repraesentation_von_Text_Bild_Ton.ipynb) prepared by Robert Jäschke [2].
+If you would like to do the deep dive into low level raster graphics, Luna McNulty has done a great job with "[Writing BMP Images from Scratch](https://lmcnulty.me/words/bmp-output/)" in C! The functions to write the actual file have been adopted from [course materials and exercises](https://scm.cms.hu-berlin.de/ibi/damostin/-/blob/master/notebooks/3_Repraesentation_von_Text_Bild_Ton.ipynb) prepared by Robert Jäschke [\[2\]](#ref2){#cite2}.
 
 ```python
 def write_bmp_header(f, file_size):
@@ -148,6 +148,6 @@ The color mapping does not match the original, but for this "bytewise" demonstra
 
 ## References
 
-[1] C. P. Morice, J. J. Kennedy, N. A. Rayner, and P. D. Jones, “Quantifying uncertainties in global and regional temperature change using an ensemble of observational estimates: The HadCRUT4 data set,” _J. Geophys. Res._, vol. 117, no. D8, p. 2011JD017187, Apr. 2012, doi: [10.1029/2011JD017187](https://doi.org/10.1029/2011JD017187).
+[\[1\]](#cite1){#ref1} C. P. Morice, J. J. Kennedy, N. A. Rayner, and P. D. Jones, “Quantifying uncertainties in global and regional temperature change using an ensemble of observational estimates: The HadCRUT4 data set,” _J. Geophys. Res._, vol. 117, no. D8, p. 2011JD017187, Apr. 2012, doi: [10.1029/2011JD017187](https://doi.org/10.1029/2011JD017187).
 
-[2] R. Jäschke, “Datenstrukturen und -integration.” Mar. 26, 2020. Accessed: Jul. 31, 2024. [Online]. Available: https://scm.cms.hu-berlin.de/ibi/damostin
+[\[2\]](#cite2){#ref2} R. Jäschke, “Datenstrukturen und -integration.” Mar. 26, 2020. Accessed: Jul. 31, 2024. [Online]. Available: https://scm.cms.hu-berlin.de/ibi/damostin
